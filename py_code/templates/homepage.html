@@ -1,0 +1,96 @@
+<html>
+<head>
+  <title>Systematics Check- k</title>
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.5.min.css"
+    rel="stylesheet" type="text/css">
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.5.min.css"
+    rel="stylesheet" type="text/css">
+
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.5.min.js"></script>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.5.min.js"></script>
+
+
+</head>
+<body>
+
+<fieldset>
+	<legend>Choose what you want plotted on the corner plot</legend>
+	<div>
+		<form action="/">
+		<select name="choice_for_x">
+			{% for x in choice_x %}
+				{% if x == current_x %}
+					<option selected value='{{ x }}'>{{ x }}</option>
+				{% else %}
+					<option value='{{ x }}'>{{ x }}</option>
+				{% endif %}
+			{% endfor %}
+		</select>
+
+		<select name="choice_for_y">
+			{% for y in choice_y %}
+				{% if y == current_y %}
+					<option selected value='{{ y }}'>{{ y }}</option>
+				{% else %}
+					<option value='{{ y }}'>{{ y }}</option>
+				{% endif %}
+			{% endfor %}
+		</select>
+	
+		<input type="submit">
+	</div>
+</fieldset>
+
+<!--
+<fieldset>
+	<legend>Choose which nuisance parameters you want plotted</legend>
+	<form role='form' method='post'>
+		<div>
+			<pre>Galaxy Bias	\Delta_source	\Delta_lens	Shear Calibration	Intrinsic Alignment</pre>
+		</div>
+		<div>
+			<input type="checkbox" name='b_all' value=['b_1', 'b_2', 'b_3', 'b_4', 'b_5', 'b_6', 'b_7', 'b_8', 'b_9', 'b_10']>
+			<input type='checkbox' name='delta_source_all' value=['delta_soure_1', 'delta_source_2', 'delta_source_3', 'delta_source_4', 'delta_source_5', 'delta_source_6', 'delta_source_7', 'delta_source_8', 'delta_source_9', 'delta_source_10', 'sigma_source']>
+			<input type='checkbox' name='delta_lens_all' value=['delta_lens_1', 'delta_lens_2', 'delta_lens_3', 'delta_lens_4', 'delta_lens_5', 'delta_lens_6', 'delta_lens_7', 'delta_lens_8', 'delta_lens_9', 'delta_lens_10', 'sigma_lens']>
+			<input type='checkbox' name='m_all' value=['m_1', 'm_2', 'm_3', 'm_4', 'm_5', 'm_6', 'm_7', 'm_8', 'm_9', 'm_10']>
+			<input type='checkbox' name='intrinsic_all' value=['A_0', 'beta', 'eta', 'eta_z']>
+
+		</div>
+	</form>
+</fieldset>
+-->
+<fieldset>
+	<legend>Choose which z bins you want plotted</legend>
+	<div>
+		<form role="form" method="post">
+			<input type="checkbox" name="z bin 1" value='1' checked>
+			<label for='z bin 1'>z bin 1</label>
+			<input type="checkbox" name="z bin 2" value='2' checked>
+			<label for='z bin 2'>z bin 2</label>
+			<input type="checkbox" name="z bin 3" value='3' checked>
+			<label for='z bin 3'>z bin 3</label>
+			<input type="checkbox" name="z bin 4" value='4' checked>
+			<label for='z bin 4'>z bin 4</label>
+			<input type="checkbox" name="z bin 5" value='5' checked>
+			<label for='z bin 5'>z bin 5</label>
+			<input type="checkbox" name="z bin 6" value='6' checked>
+			<label for='z bin 6'>z bin 6</label>
+			<input type="checkbox" name="z bin 7" value='7' checked>
+			<label for='z bin 7'>z bin 7</label>
+			<input type="checkbox" name="z bin 8" value='8' checked>
+			<label for='z bin 8'>z bin 8</label>
+			<input type="checkbox" name="z bin 9" value='9' checked>
+			<label for='z bin 9'>z bin 9</label>
+			<input type="checkbox" name="z bin 10" value='10' checked>
+			<label for='z bin 10'>z bin 10</label>
+			<button type="submit" name="submit_z" value="submit">Submit</button>
+		</form>
+	</div>
+</fieldset>
+{{script|safe}}
+
+{{div|safe}}
+</body>
+</html>
